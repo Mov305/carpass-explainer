@@ -748,6 +748,8 @@ const menuBtn = {
 
 export default function App() {
   const [playing, setPlaying] = useState(false);
+  const [started, setStarted] = useState(false);
+  const handleStart = () => { setStarted(true); setPlaying(true); };
   const [voice, setVoice] = useState("v2");
   const t = useClock(playing);
   const now = t.get();
@@ -780,6 +782,23 @@ export default function App() {
         <div style={{ height: "100%", width: `${(now / DURATION) * 100}%`, background: `linear-gradient(90deg, ${C.teal}, ${C.violet})` }} />
       </div>
       <SettingsFab playing={playing} onTogglePlay={() => setPlaying(v => !v)} onRestart={restart} voice={voice} onVoiceChange={setVoice} now={now} />
+      {!started && (
+        <div onClick={handleStart} style={{
+          position: "absolute", inset: 0, zIndex: 50,
+          background: C.bg, display: "flex", flexDirection: "column",
+          alignItems: "center", justifyContent: "center", cursor: "pointer",
+        }}>
+          <div style={{
+            width: 80, height: 80, borderRadius: "50%", border: `2px solid ${C.teal}`,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            marginBottom: 24, transition: "transform .2s",
+          }}>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill={C.teal}><path d="M8 5v14l11-7z" /></svg>
+          </div>
+          <span style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: 18, color: C.ink }}>Click to play</span>
+          <span style={{ color: C.dim, fontSize: 13, marginTop: 8 }}>matchedby.com — SaaS Explainer</span>
+        </div>
+      )}
     </div>
   );
 }
