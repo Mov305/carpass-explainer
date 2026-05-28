@@ -164,9 +164,9 @@ function Hook({ p }) {
     <Center>
       <Badge><I.Zap s={14} /> AI AGENT PLATFORM</Badge>
       <h1 style={{ fontFamily: DISPLAY, fontSize: "clamp(2.4rem,5.5vw,4.8rem)", fontWeight: 800, lineHeight: 1.06, letterSpacing: -2, margin: "32px 0 0" }}>
-        {lines.map((l, i) => { const lp = clamp01((p - 0.1 - i * 0.12) / 0.35); return <span key={i} style={{ display: "block", opacity: lp, transform: `translateY(${(1 - easeOut(lp)) * 30}px)`, color: i === 2 ? C.teal : C.ink }}>{l}</span>; })}
+        {lines.map((l, i) => { const lp = clamp01((p - 0.02 - i * 0.07) / 0.15); return <span key={i} style={{ display: "block", opacity: lp, transform: `translateY(${(1 - easeOut(lp)) * 20}px)`, color: i === 2 ? C.teal : C.ink }}>{l}</span>; })}
       </h1>
-      <p style={{ color: C.dim, fontSize: "clamp(1rem,2vw,1.2rem)", marginTop: 28, maxWidth: 520, marginLeft: "auto", marginRight: "auto", opacity: clamp01((p - 0.55) / 0.3), lineHeight: 1.7 }}>
+      <p style={{ color: C.dim, fontSize: "clamp(1rem,2vw,1.2rem)", marginTop: 28, maxWidth: 520, marginLeft: "auto", marginRight: "auto", opacity: clamp01((p - 0.35) / 0.2), lineHeight: 1.7 }}>
         matchedby.com answers every one — phone, WhatsApp & web, 24/7.
       </p>
     </Center>
