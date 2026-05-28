@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm --filter @repo/frontend test)",
+      "Bash(pnpm type-check:*)",
+      "Bash(pnpm format:*)",
+      "Bash(pnpm lint:*)",
+      "Bash(pnpm format:check)",
+      "Bash(grep -E \"^[^/]*\\\\.tsx$|/App\\\\.tsx$|/main\\\\.tsx$|/index\\\\.tsx$\")",
+      "Bash(grep -n 'getConfiguredDashboardData\\\\|buildCompositeMetricFilter\\\\|prisma\\\\.$queryRaw' /d/Carpass/newcross-healthcare/apps/backend/src/modules/analytics/analytics.service.ts)",
+      "Bash(pnpm:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(xargs grep:*)",
+      "WebFetch(domain:natwestpayments-api-docs.readme.io)",
+      "WebSearch",
+      "PowerShell(Copy-Item *)"
+    ],
+    "defaultMode": "bypassPermissions"
+  }
+}
